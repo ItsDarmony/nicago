@@ -1,0 +1,293 @@
+/* ==========================================
+   PARSEC-STYLE SPLIT LOGIN FOR NICAGO
+   ========================================== */
+
+.login-body {
+    margin: 0;
+    padding: 0;
+    background-color: #0A1E18; /* Dark base */
+    color: #E8F1EE;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+.split-screen {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+/* --- PANEL IZQUIERDO --- */
+.panel-form {
+    flex: 1;
+    background-color: #0D231C; /* Verde noche oscuro */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.5rem 3rem;
+    max-width: 540px;
+    box-sizing: border-box;
+}
+
+.form-header {
+    text-align: right;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.link-highlight {
+    color: #91D5DD;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.link-highlight:hover {
+    text-decoration: underline;
+}
+
+/* Contenido centrado */
+.form-container {
+    max-width: 380px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.brand-badge {
+    width: 56px;
+    height: 56px;
+    background: rgba(13, 109, 105, 0.3);
+    border: 1px solid rgba(145, 213, 221, 0.2);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.form-container h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    color: #FFFFFF;
+    letter-spacing: -0.5px;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1.2rem;
+}
+
+.field-group label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.asterisk {
+    color: #DAE799;
+}
+
+.field-group input {
+    background-color: #071612;
+    border: 1.5px solid rgba(145, 213, 221, 0.15);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    color: #FFFFFF;
+    font-size: 0.92rem;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.field-group input:focus {
+    border-color: #91D5DD;
+    box-shadow: 0 0 0 3px rgba(145, 213, 221, 0.1);
+}
+
+/* Password wrapper con boton MOSTRAR */
+.input-password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-password-wrapper input {
+    width: 100%;
+    padding-right: 5rem;
+}
+
+.btn-toggle-show {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.btn-toggle-show:hover {
+    color: #91D5DD;
+}
+
+.form-actions {
+    margin-bottom: 1.8rem;
+}
+
+.link-subtle {
+    color: #91D5DD;
+    font-size: 0.82rem;
+    text-decoration: none;
+}
+
+.link-subtle:hover {
+    text-decoration: underline;
+}
+
+.btn-login-pill {
+    width: 100%;
+    background-color: #DAE799; /* Verde Lima acento */
+    color: #0D3C30;
+    border: none;
+    padding: 0.9rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-login-pill:hover {
+    background-color: #e5f0ab;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(218, 231, 153, 0.2);
+}
+
+.sso-note {
+    text-align: center;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 1.5rem;
+}
+
+/* Footer enlaces */
+.form-footer {
+    display: flex;
+    gap: 1.2rem;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.form-footer a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.form-footer a:hover {
+    color: #91D5DD;
+}
+
+/* --- PANEL DERECHO BANNER --- */
+.panel-banner {
+    flex: 1;
+    background: linear-gradient(135deg, #0D6D69 0%, #0D3C30 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-content {
+    text-align: center;
+    z-index: 2;
+}
+
+.banner-logo {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -2px;
+}
+
+.banner-logo span {
+    color: #DAE799;
+}
+
+.banner-tagline {
+    font-size: 1.2rem;
+    color: #91D5DD;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .panel-banner {
+        display: none; /* En móviles muestra solo el formulario */
+    }
+    .panel-form {
+        max-width: 100%;
+    }
+}
+
+
+/* Centrado del mensaje superior de Registro */
+.form-header {
+    text-align: center;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Centrado del contenedor y badge del logo */
+.form-container {
+    max-width: 380px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center; /* Centra el título y el badge */
+}
+
+.brand-badge {
+    width: 60px;
+    height: 60px;
+    background: rgba(13, 109, 105, 0.35);
+    border: 1px solid rgba(145, 213, 221, 0.25);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.2rem auto; /* Centrado horizontal */
+}
+
+.form-container h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    color: #FFFFFF;
+    letter-spacing: -0.5px;
+    text-align: center;
+}
+
+/* Reorientar etiquetas del formulario a la izquierda */
+.field-group, .form-actions {
+    text-align: left;
+}
+
+/* Fondo con URL directa de Unsplash + Fallback de degrado */
+.panel-banner {
+    flex: 1;
+    background: 
+        linear-gradient(135deg, rgba(13, 60, 48, 0.75) 0%, rgba(13, 109, 105, 0.85) 100%),
+        url('https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}

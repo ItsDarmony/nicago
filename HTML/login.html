@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NicaGo - Iniciar Sesión</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/login.css">
+</head>
+<body class="login-body">
+
+    <div class="split-screen">
+        <!-- PANEL IZQUIERDO: FORMULARIO -->
+        <main class="panel-form">
+            <!-- Header superior centrado -->
+            <div class="form-header">
+                <p>¿Necesitas una cuenta? <a href="#" class="link-highlight">Regístrate</a></p>
+            </div>
+
+            <!-- Contenido principal centrado -->
+            <div class="form-container">
+                <!-- Icono Oficial NicaGo (Pájaro) Centrado -->
+                <div class="brand-badge">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="#DAE799">
+                        <path d="M22 3c-1.5 1.5-3.8 2.2-6 2-1.5 2.5-4 4-7 4.5l-1-2.5 3-2.5C8 4.5 5 6 3 9c3 0 5 1.5 6.5 3.5L6 14.5l-3-1 1 3.5 3 1.5c.5 1.5 1.5 2.5 3 3l-1.5-3.5 2.5-2c1.5 2 3.5 3 6 3-1-2-1-4.5 0-6.5l3.5-3.5C22 7.5 23 5 22 3z"/>
+                    </svg>
+                </div>
+
+                <h2>Iniciar sesión en NicaGo</h2>
+
+                <form onsubmit="return false;">
+                    <div class="field-group">
+                        <label for="email">Correo electrónico <span class="asterisk">*</span></label>
+                        <input type="email" id="email" placeholder="usuario@nicago.com" required>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="password">Contraseña <span class="asterisk">*</span></label>
+                        <div class="input-password-wrapper">
+                            <input type="password" id="password" placeholder="••••••••••••" required>
+                            <button type="button" class="btn-toggle-show">MOSTRAR</button>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <a href="#" class="link-subtle">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <button type="submit" class="btn-login-pill">Iniciar sesión</button>
+                </form>
+            </div>
+
+            <!-- Footer inferior -->
+            <footer class="form-footer">
+                <a href="#">Ayuda</a>
+                <a href="#">Términos</a>
+                <a href="#">Privacidad</a>
+                <a href="#">Configuración de cookies</a>
+            </footer>
+        </main>
+
+        <!-- PANEL DERECHO: BANNER VISUAL -->
+        <aside class="panel-banner">
+            <div class="banner-content">
+                <h1 class="banner-logo">NICA<span>GO</span></h1>
+                <p class="banner-tagline">Tierra de lagos y volcanes.</p>
+            </div>
+        </aside>
+    </div>
+
+</body>
+</html>
