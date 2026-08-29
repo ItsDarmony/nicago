@@ -781,3 +781,16 @@ header {
     font-size: 0.9rem;
     margin-top: 4px;
 }
+
+
+[data-theme="dark"] input,
+[data-theme="dark"] textarea {
+    background-color: #22252a !important;
+    color: #ffffff !important;
+    border-color: #3a3f47 !important;
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+    color: #9aa0a6 !important;
+}
