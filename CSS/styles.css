@@ -429,3 +429,276 @@ header {
         display: none;
     }
 }
+
+.smooth-entry {
+    opacity: 0;
+    animation: smoothFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.delay-1 { animation-delay: 0.08s; }
+.delay-2 { animation-delay: 0.16s; }
+.delay-3 { animation-delay: 0.24s; }
+.delay-4 { animation-delay: 0.32s; }
+.delay-5 { animation-delay: 0.40s; }
+.delay-6 { animation-delay: 0.48s; }
+
+@keyframes smoothFadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(22px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ==========================================
+   SECCIÓN DE HOTELES DESTACADOS
+   ========================================== */
+
+.hotels-section {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    margin-bottom: 30px;
+}
+
+.section-subtitle {
+    opacity: 0.75;
+    font-size: 0.95rem;
+    margin-top: 4px;
+}
+
+.hotels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+}
+
+.hotel-card {
+    background-color: var(--card-bg, #ffffff);
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hotel-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+}
+
+.hotel-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(15, 23, 42, 0.75);
+    color: #ffffff;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    backdrop-filter: blur(6px);
+    z-index: 2;
+}
+
+.hotel-media {
+    height: 190px;
+    background: var(--placeholder-bg, #e0f2fe);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-accent, #0284c7);
+}
+
+.hotel-info {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.hotel-info h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.hotel-location {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin-bottom: 12px;
+}
+
+.hotel-desc {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    opacity: 0.85;
+    margin-bottom: 24px;
+    flex-grow: 1;
+}
+
+.hotel-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--border-color, #e2e8f0);
+    padding-top: 16px;
+}
+
+.hotel-price {
+    font-size: 0.85rem;
+}
+
+.hotel-price strong {
+    font-size: 1.2rem;
+    color: #0284c7;
+}
+
+.btn-card {
+    background-color: #0284c7;
+    color: #ffffff;
+    padding: 9px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-card:hover {
+    background-color: #0369a1;
+    transform: translateY(-1px);
+}
+
+/* Detalles adicionales para tarjetas de hoteles */
+.hotel-info-text {
+    font-size: 0.82rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-top: 4px;
+}
+
+.hotel-rating {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    color: #f59e0b; /* Color dorado para las estrellas */
+    margin-top: 6px;
+}
+
+.hotel-rating span {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-left: 4px;
+}
+
+.hotel-price-tag {
+    font-size: 0.88rem;
+    color: var(--primary-color, #00A699);
+    margin-top: 8px;
+}
+
+
+/* ==========================================================
+   VARIABLES DE TEMA (Asegúrate de que tus temas las tengan)
+   ========================================================== */
+[data-theme="light"] {
+    --bg-main: #f4f7f6;
+    --card-bg: #ffffff;
+    --card-header-bg: #90e0ef33; /* Cyan suave para modo claro */
+    --card-border: #e2e8f0;
+    --text-primary: #1e293b;
+    --text-muted: #64748b;
+    --accent-color: #00a699;
+}
+
+[data-theme="dark"] {
+    --bg-main: #0a1311;
+    --card-bg: #132722;          /* Verde/Gris oscuro armónico */
+    --card-header-bg: #1c3831;   /* Encabezado un poco más claro */
+    --card-border: #22473e;
+    --text-primary: #f1f5f9;
+    --text-muted: #94a3b8;
+    --accent-color: #2dd4bf;
+}
+
+/* ==========================================================
+   ESTILO UNIFICADO DE TARJETAS (MODO CLARO Y OSCURO)
+   ========================================================== */
+.category-card {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Área superior (Contenedor del ícono) */
+.card-image-placeholder {
+    background-color: var(--card-header-bg);
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+    transition: background-color 0.3s ease;
+}
+
+/* Título de la tarjeta */
+.category-card h3 {
+    color: var(--text-primary) !important;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 14px 16px 4px 16px;
+}
+
+/* Texto de ubicación */
+.hotel-info-text {
+    font-size: 0.85rem;
+    color: var(--text-muted) !important;
+    margin: 0 16px 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Estrellas y calificación */
+.hotel-rating {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    color: #f59e0b; /* Dorado de estrellas */
+    margin: 0 16px 10px 16px;
+}
+
+.hotel-rating span {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-primary) !important;
+    margin-left: 4px;
+}
+
+/* Etiqueta de precio */
+.hotel-price-tag {
+    font-size: 0.9rem;
+    color: var(--accent-color) !important;
+    font-weight: 500;
+    margin: auto 16px 16px 16px;
+}
