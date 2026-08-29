@@ -14,10 +14,10 @@
         <div class="nav-container">
             <a href="#" class="logo">GO<span>NIC</span></a>
             <ul class="nav-links">
-                <li><a href="#" id="nav-discover">Descubrir</a></li>
+                <li><a href="#" id="nav-discover" class="active">Descubrir</a></li>
                 <li><a href="#" id="nav-hotels">Hoteles</a></li>
-                <li><a href="#">Qué hacer</a></li>
                 <li><a href="#">Foros</a></li>
+                <li><a href="#">Contacto</a></li>
                 <!-- Botón de Tema (Estilo texto plano) -->
                 <li>
                     <button type="button" id="theme-toggle" class="nav-theme-btn" aria-label="Cambiar tema">
@@ -102,78 +102,86 @@
                     <h3>Gastronomía Típica</h3>
                 </div>
 
-                <!-- ================= TARJETAS DE HOTELES (MUESTRAN AL DAR CLIC EN HOTELES) ================= -->
+                <!-- ================= TARJETAS DE HOTELES CON IMÁGENES ================= -->
                 
                 <!-- Hotel 1 -->
                 <div class="category-card hotel-card smooth-entry" data-type="hotels" style="display: none;">
-                    <div class="card-image-placeholder">
-                        <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 10h2M13 10h2M9 14h2M13 14h2"/></svg>
+                    <div class="card-image-container">
+                        <img src="../ASSETS/hotel_granada.jpg" alt="Hotel Plaza Colón" class="card-real-img">
                     </div>
-                    <h3>Hotel Plaza Colón</h3>
-                    <p class="hotel-info-text"> Granada, Centro Histórico</p>
-                    <div class="hotel-rating">
-                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <span>5.0</span>
+                    <div class="card-content-area">
+                        <h3>Hotel Plaza Colón</h3>
+                        <p class="hotel-info-text">Granada, Centro Histórico</p>
+                        <div class="hotel-rating">
+                            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <span>5.0</span>
+                        </div>
+                        <span class="hotel-price-tag"><strong>$110</strong> / noche</span>
                     </div>
-                    <span class="hotel-price-tag"><strong>$110</strong> / noche</span>
                 </div>
 
                 <!-- Hotel 2 -->
                 <div class="category-card hotel-card smooth-entry" data-type="hotels" style="display: none;">
-                    <div class="card-image-placeholder">
-                        <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2 20s3-2 7-2 7 2 7 2 3-2 6-2"/><circle cx="12" cy="6" r="3"/></svg>
+                    <div class="card-image-container">
+                        <img src="../ASSETS/hotel_sanjuan.jfif" alt="Morgan's Rock Eco-Lodge" class="card-real-img">
                     </div>
-                    <h3>Morgan's Rock Eco-Lodge</h3>
-                    <p class="hotel-info-text"> San Juan del Sur, Rivas</p>
-                    <div class="hotel-rating">
-                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <span>4.9</span>
+                    <div class="card-content-area">
+                        <h3>Morgan's Rock Eco-Lodge</h3>
+                        <p class="hotel-info-text">San Juan del Sur, Rivas</p>
+                        <div class="hotel-rating">
+                            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <span>4.9</span>
+                        </div>
+                        <span class="hotel-price-tag"><strong>$240</strong> / noche</span>
                     </div>
-                    <span class="hotel-price-tag"><strong>$240</strong> / noche</span>
                 </div>
 
                 <!-- Hotel 3 -->
                 <div class="category-card hotel-card smooth-entry" data-type="hotels" style="display: none;">
-                    <div class="card-image-placeholder">
-                        <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+                    <div class="card-image-container">
+                        <img src="../ASSETS/hotel_ometepe.jpg" alt="Totoco Eco-Lodge" class="card-real-img">
                     </div>
-                    <h3>Totoco Eco-Lodge</h3>
-                    <p class="hotel-info-text"> Balgüe, Isla de Ometepe</p>
-                    <div class="hotel-rating">
-                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg width="15" height="15" fill="currentColor" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <span>4.8</span>
+                    <div class="card-content-area">
+                        <h3>Totoco Eco-Lodge</h3>
+                        <p class="hotel-info-text">Balgüe, Isla de Ometepe</p>
+                        <div class="hotel-rating">
+                            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="15" height="15" fill="currentColor" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <span>4.8</span>
+                        </div>
+                        <span class="hotel-price-tag"><strong>$85</strong> / noche</span>
                     </div>
-                    <span class="hotel-price-tag"><strong>$85</strong> / noche</span>
                 </div>
 
                 <!-- Hotel 4 -->
                 <div class="category-card hotel-card smooth-entry" data-type="hotels" style="display: none;">
-                    <div class="card-image-placeholder">
-                        <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 10h2M13 10h2M9 14h2M13 14h2"/></svg>
+                    <div class="card-image-container">
+                        <img src="../ASSETS/hotel_leon.jpg" alt="Hotel El Convento" class="card-real-img">
                     </div>
-                    <h3>Hotel El Convento</h3>
-                    <p class="hotel-info-text"> León, Centro Histórico</p>
-                    <div class="hotel-rating">
-                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                        <span>4.7</span>
+                    <div class="card-content-area">
+                        <h3>Hotel El Convento</h3>
+                        <p class="hotel-info-text">León, Centro Histórico</p>
+                        <div class="hotel-rating">
+                            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <span>4.7</span>
+                        </div>
+                        <span class="hotel-price-tag"><strong>$95</strong> / noche</span>
                     </div>
-                    <span class="hotel-price-tag"><strong>$95</strong> / noche</span>
                 </div>
 
             </div>
@@ -272,7 +280,6 @@
         };
 
         function setView(tabKey) {
-            // Actualizar pestaña activa
             tabs.forEach(t => {
                 if (t.getAttribute('data-tab') === tabKey) {
                     t.classList.add('active');
@@ -281,18 +288,13 @@
                 }
             });
 
-            // Actualizar placeholder y título
             if (tabConfig[tabKey]) {
                 searchInput.placeholder = tabConfig[tabKey].placeholder;
                 categoriesTitle.textContent = tabConfig[tabKey].title;
             }
 
-            // Mostrar / Ocultar tarjetas
             if (tabKey === 'hotels') {
-                // Ocultar tarjetas principales
                 mainCards.forEach(card => card.style.display = 'none');
-                
-                // Mostrar tarjetas de hoteles con animación
                 hotelCards.forEach(card => {
                     card.style.display = 'flex';
                     card.style.animation = 'none';
@@ -300,9 +302,7 @@
                     card.style.animation = 'smoothFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards';
                 });
             } else {
-                // En "Buscar todo" u otras pestañas, mostrar la vista principal original
                 hotelCards.forEach(card => card.style.display = 'none');
-                
                 mainCards.forEach(card => {
                     card.style.display = 'flex';
                     card.style.animation = 'none';
@@ -312,7 +312,6 @@
             }
         }
 
-        // Clic en pestañas
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
                 const tabKey = tab.getAttribute('data-tab');
@@ -320,7 +319,6 @@
             });
         });
 
-        // Clic en "Hoteles" de la barra de navegación superior
         if (navHotels) {
             navHotels.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -328,7 +326,6 @@
             });
         }
 
-        // Clic en "Descubrir" vuelve a la vista principal
         if (navDiscover) {
             navDiscover.addEventListener('click', (e) => {
                 e.preventDefault();
