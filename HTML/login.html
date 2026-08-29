@@ -14,43 +14,43 @@
         <!-- PANEL IZQUIERDO: FORMULARIO -->
         <main class="panel-form">
             <!-- Header superior centrado -->
-            <div class="form-header">
+            <div class="form-header smooth-entry delay-1">
                 <p>¿Necesitas una cuenta? <a href="register.html" class="link-highlight">Regístrate</a></p>
             </div>
 
             <!-- Contenido principal centrado -->
             <div class="form-container">
-                <!-- Logo Oficial LH.png Centrado -->
-                <div class="brand-badge">
+                <!-- Logo Oficial Centrado -->
+                <div class="brand-badge smooth-entry delay-2">
                     <img src="../ASSETS/pajarito.png" alt="Go Nic Logo" class="brand-logo-img">
                 </div>
 
-                <h2>Iniciar sesión en Go Nic</h2>
+                <h2 class="smooth-entry delay-3">Iniciar sesión en Go Nic</h2>
 
                 <form onsubmit="return false;">
-                    <div class="field-group">
+                    <div class="field-group smooth-entry delay-4">
                         <label for="email">Correo electrónico <span class="asterisk">*</span></label>
-                        <input type="email" id="email" placeholder="usuario@gmail.com" required>
+                        <input type="email" id="email" placeholder="usuario@gmail.com" required autocomplete="email">
                     </div>
 
-                    <div class="field-group">
+                    <div class="field-group smooth-entry delay-5">
                         <label for="password">Contraseña <span class="asterisk">*</span></label>
                         <div class="input-password-wrapper">
                             <input type="password" id="password" placeholder="••••••••••••" required>
-                            <button type="button" class="btn-toggle-show">MOSTRAR</button>
+                            <button type="button" class="btn-toggle-show" id="togglePassword">MOSTRAR</button>
                         </div>
                     </div>
 
-                    <div class="form-actions">
+                    <div class="form-actions smooth-entry delay-5">
                         <a href="#" class="link-subtle">¿Olvidaste tu contraseña?</a>
                     </div>
 
-                    <button type="submit" class="btn-login-pill">Iniciar sesión</button>
+                    <button type="submit" class="btn-login-pill smooth-entry delay-6">Iniciar sesión</button>
                 </form>
             </div>
 
             <!-- Footer inferior -->
-            <footer class="form-footer">
+            <footer class="form-footer smooth-entry delay-7">
                 <a href="#">Ayuda</a>
                 <a href="#">Términos</a>
                 <a href="#">Privacidad</a>
@@ -59,13 +59,26 @@
         </main>
 
         <!-- PANEL DERECHO: BANNER VISUAL -->
-        <aside class="panel-banner">
-            <div class="banner-content">
+        <aside class="panel-banner smooth-banner">
+            <div class="banner-content smooth-entry delay-3">
                 <h1 class="banner-logo">GO <span>NIC</span></h1>
                 <p class="banner-tagline">Tierra de lagos y volcanes.</p>
             </div>
         </aside>
     </div>
 
+    <!-- Script para alternar visibilidad de contraseña -->
+    <script>
+        const toggleBtn = document.getElementById('togglePassword');
+        const passInput = document.getElementById('password');
+
+        if (toggleBtn && passInput) {
+            toggleBtn.addEventListener('click', () => {
+                const isPassword = passInput.type === 'password';
+                passInput.type = isPassword ? 'text' : 'password';
+                toggleBtn.textContent = isPassword ? 'OCULTAR' : 'MOSTRAR';
+            });
+        }
+    </script>
 </body>
 </html>
