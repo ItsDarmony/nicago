@@ -177,11 +177,17 @@
     box-shadow: 0 6px 20px rgba(218, 231, 153, 0.2);
 }
 
+/* Footer centrado correctamente */
 .form-footer {
     display: flex;
-    gap: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
     font-size: 0.78rem;
     color: rgba(255, 255, 255, 0.4);
+    width: 100%;
+    margin-top: auto;
+    text-align: center;
 }
 
 .form-footer a {
@@ -282,4 +288,107 @@
         opacity: 1;
         transform: scale(1);
     }
+}
+
+/* Responsive / Móvil */
+@media (max-width: 900px) {
+    .panel-banner {
+        display: none;
+    }
+    .panel-form {
+        max-width: 100%;
+        width: 100%;
+        padding: 2rem 1.5rem;
+        min-height: 100vh;
+        box-sizing: border-box;
+        justify-content: space-between;
+    }
+
+    .form-container {
+        max-width: 100%;
+        margin: 1.5rem auto;
+    }
+
+    .form-container h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-footer {
+        flex-wrap: wrap;
+        gap: 0.8rem 1.2rem;
+        justify-content: center;
+        text-align: center;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .panel-form {
+        padding: 1.5rem 1rem;
+    }
+    
+    .brand-badge {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1rem;
+    }
+
+    .field-group input {
+        padding: 0.75rem 0.9rem;
+        font-size: 1rem;
+    }
+}
+
+/* ==========================================
+   TRANSICIÓN LATERAL Y DESVANECIMIENTO
+   ========================================== */
+
+.form-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.auth-slider-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.auth-view {
+    width: 100%;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    transform: translateX(40px);
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.auth-view.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+    position: relative;
+}
+
+.auth-view.exit-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    pointer-events: none;
+    position: absolute;
+}
+
+.auth-view.exit-right {
+    opacity: 0;
+    transform: translateX(40px);
+    pointer-events: none;
+    position: absolute;
+}
+
+.switch-prompt {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.7);
 }
