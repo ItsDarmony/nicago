@@ -100,21 +100,27 @@
                         <div id="registerView" class="auth-view next">
                             <h2 class="smooth-entry delay-3" data-i18n="reg_title">Crear cuenta en Go Nic</h2>
 
-                            <form onsubmit="return false;">
+                            <!-- FORMULARIO DE REGISTRO CONECTADO AL BACKEND -->
+                            <form id="registerForm">
                                 <div class="field-group smooth-entry delay-4">
                                     <label for="reg-name"><span data-i18n="label_fullname">Nombre completo</span> <span class="asterisk">*</span></label>
-                                    <input type="text" id="reg-name" placeholder="Tu nombre" required>
+                                    <input type="text" id="reg-name" name="nombre" placeholder="Tu nombre" required>
+                                </div>
+
+                                <div class="field-group smooth-entry delay-4">
+                                    <label for="reg-apellido"><span>Apellido</span> <span class="asterisk">*</span></label>
+                                    <input type="text" id="reg-apellido" name="apellido" placeholder="Tu apellido" required>
                                 </div>
 
                                 <div class="field-group smooth-entry delay-4">
                                     <label for="reg-email"><span data-i18n="label_email">Correo electrónico</span> <span class="asterisk">*</span></label>
-                                    <input type="email" id="reg-email" placeholder="usuario@gmail.com" required autocomplete="email">
+                                    <input type="email" id="reg-email" name="email" placeholder="usuario@gmail.com" required autocomplete="email">
                                 </div>
 
                                 <div class="field-group smooth-entry delay-5">
                                     <label for="reg-password"><span data-i18n="label_pass">Contraseña</span> <span class="asterisk">*</span></label>
                                     <div class="input-password-wrapper">
-                                        <input type="password" id="reg-password" placeholder="••••••••••••" required>
+                                        <input type="password" id="reg-password" name="password" placeholder="••••••••••••" required>
                                         <button type="button" class="btn-toggle-show" data-target="reg-password" data-i18n="btn_show">MOSTRAR</button>
                                     </div>
                                 </div>
@@ -126,6 +132,15 @@
                                     <p><span data-i18n="has_account">¿Ya tienes una cuenta?</span> <a href="#" id="goToLogin" class="link-highlight" data-i18n="link_login">Inicia sesión</a></p>
                                 </div>
                             </form>
+
+                            <!-- CAJA DE VERIFICACIÓN DE CÓDIGO OCULTA -->
+                            <div id="verifBox" style="display: none; margin-top: 20px; text-align: center;">
+                                <h3 style="color: #fff; margin-bottom: 10px; font-size: 1.2rem;">Verifica tu correo</h3>
+                                <p style="color: rgba(255,255,255,0.8); font-size: 0.85rem; margin-bottom: 15px;">Ingresa el código de 6 dígitos enviado a tu correo.</p>
+                                <input type="text" id="codigoInput" placeholder="123456" maxlength="6" style="padding: 10px; width: 100%; margin-bottom: 15px; border-radius: 8px; border: 1.5px solid rgba(145, 213, 221, 0.25); background: #071612; color: #fff; text-align: center; font-size: 1.2rem; letter-spacing: 2px; outline: none;">
+                                <button type="button" id="btnVerificar" class="btn-login-pill">Verificar Código</button>
+                            </div>
+
                         </div>
 
                     </div>
@@ -150,7 +165,7 @@
         </div>
     </div>
 
-    <!-- Script de Transición, Ocultar Contraseña y Traducción -->
+    <!-- Script de Transición, Ocultar Contraseña, Traducción y Backend -->
     <script>
         const translations = {
             es: {
@@ -272,6 +287,56 @@
 
             loginView.classList.remove('exit-left');
             loginView.classList.add('active');
+        });
+
+        // Lógica de Registro y Verificación con el Backend (XAMPP)
+        let correoPendiente = '';
+
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            correoPendiente = document.getElementById('reg-email').value;
+
+            try {
+                const response = await fetch('../BACKEND/registro_backend.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                
+                alert(result.message);
+                if (result.status === 'success') {
+                    // Ocultar los inputs del formulario y mostrar la caja de verificación del código
+                    document.getElementById('registerForm').querySelectorAll('.field-group, button').forEach(el => el.style.display = 'none');
+                    document.getElementById('verifBox').style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Ocurrió un error al conectar con el servidor.');
+            }
+        });
+
+        document.getElementById('btnVerificar').addEventListener('click', async () => {
+            const codigo = document.getElementById('codigoInput').value;
+            const formData = new FormData();
+            formData.append('email', correoPendiente);
+            formData.append('codigo', codigo);
+
+            try {
+                const response = await fetch('../BACKEND/verificar_codigo.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                
+                alert(result.message);
+                if (result.status === 'success') {
+                    window.location.reload();
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Ocurrió un error al verificar el código.');
+            }
         });
     </script>
 </body>
